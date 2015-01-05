@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>UN TITRE</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="_styles/normalize.css"/>
+		<link rel="stylesheet" href="_styles/styles.css"/>
+		<style>
+
+			.container{
+				width: 302px;
+				height: 430px;
+				background: #BADA55;
+
+				position: fixed;
+				top: 50%;
+				right: 30%;
+				opacity: 0;
+
+				-webkit-transform:translateY(-30%); scale(.8);
+				-webkit-perspective: 300;
+			}
+
+			.ButtonScan{
+				border-radius: 100%;
+				width: 100px;
+				height: 100px;
+			}
+
+			.container.checkoutForm--active{
+				-webkit-animation: in 500ms ease-out both; 
+
+				/*-webkit-animation-name:color;
+				-webkit-animation-duration:2s;
+				-webkit-animation-timing-function:ease-in;
+				-webkit-animation-delay:;
+
+				-webkit-animation-iteration-count:infinite; /*nombre*/
+				/*-webkit-animation-direction:alternate; /*normal jaune rouge bleu,,,*/
+				/*-webkit-animation-fill-mode:both; /*foward backwards*/ 
+
+
+			}
+
+
+
+			@-webkit-keyframes in{
+				0% {
+					opacity: 0;
+					-webkit-transform:translateY(-30%) scale(8.);
+				}
+
+				30%{
+					opacity:.5;
+					-webkit-transform:translateY(-52%) scale(1.01);
+				}
+
+				100%{
+					opacity: 1;
+					-webkit-transform:translateY(-50%) scale(1);
+				}
+			}
+
+			@-webkit-keyframes out {
+				0%{
+					opacity: 1;
+					-webkit-transform:translateY(-50%)scale(1);
+
+				}
+
+				100%{
+					opacity: 0;
+					-webkit-transform:translateY(-30%)scale(.8);
+					
+				}
+			}
+
+			.container.checkoutForm--active{
+				-webkit-animation:in 500ms ease-out both;
+			}
+
+			.container.checkoutForm--out{
+				-webkit-animation:out 200ms ease-in both;
+			}
+
+			.stripeForm{
+				width: 302px;
+				height: 430px;
+				background: #BADA55;
+			}
+
+			
+
+			.stripeForm.shakeit{
+				-webkit-animation:shake 400ms ease-in-out;
+				
+			}
+
+			@-webkit-keyframes shake{
+				0%{
+					-webkit-transform: translateX(0);
+				}
+
+				12.5%{
+					-webkit-transform: translateX(-6px) rotateY(-5deg);
+				}
+
+				37.5%{
+					-webkit-transform: translateX(4px) rotateY(4deg);
+				}
+
+				62.5%{
+					-webkit-transform: translateX(-3px) rotateY(-2deg);
+				}
+
+				87.5%{
+					-webkit-transform: translateX(2px) rotateY(1deg);
+				}
+
+				100%{
+					-webkit-transform: translateX(0);
+				}
+			}
+
+
+		</style>
+	</head>
+	<body>
+
+		<button class="btn open">erreur scan</button>
+		
+
+		<div class="container">
+			<!--container 1 pour faire apparaitre et disparaitre le bloc-->
+			<div class="stripeForm">
+			<!--container 2 pour faire shake shake shake-->
+
+				<button class="ButtonScan">Scan</button>
+
+				<form class="stripeCheckout" method="post" action="#">
+					<header class="section section--header">
+						
+						
+
+					<button type="submit" class="btn--submit shake">Votre bouteille a été mal scanner. Veuillez recommencer.
+					<img src="_images/bouteille.png/" alt="bouteille"/>
+					</button>
+					 
+
+
+
+				
+
+				</form>
+
+	
+
+			</div>
+		</div>
+
+		
+
+
+
+
+
+		<script>
+		
+		var buttonOpen = document.getElementsByClassName("open")[0],
+		 	container = document.getElementsByClassName("container")[0],
+		 	shake = document.getElementsByClassName("shake")[0],
+		 	stripeForm = document.getElementsByClassName("stripeForm")[0],
+		 	buttonClose = document.getElementsByClassName("ButtonScan")[0];
+
+
+
+
+		 	buttonOpen.addEventListener("click",function(){
+		 		container.classList.remove("checkoutForm--out");
+		 		container.classList.add("checkoutForm--active");
+		 	});
+
+		 	buttonClose.addEventListener("click",function(){
+		 		container.classList.remove("checkoutForm--active");
+		 		container.classList.add("checkoutForm--out");
+		 	});
+
+
+
+		 	shake.addEventListener("click",function(e){
+		 		e.preventDefault();
+
+		 		stripeForm.classList.remove("shakeit");
+		 		stripeForm.offsetWidth = stripeForm.offsetWidth;
+		 		stripeForm.classList.add("shakeit");
+		 	});
+
+
+
+
+
+
+
+
+		</script>
+
+
+
+	</body>
+</html>

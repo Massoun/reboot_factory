@@ -1,0 +1,76 @@
+
+@import url(normalize.css); /* v3.0.2*/
+@import url(cf.css);
+
+
+
+
+button{
+     width: 30px;
+     height: 30px;
+
+     background-color: red;
+
+     margin-left: 300px;
+}
+
+
+
+
+     transition-property: all;/*background, width...*/
+     transition-duration:1s;
+     transition-timing-function: ease-in;
+
+     transition-delay: .2s;
+     transition: all .2s ease-in, width .2s ease-in;
+     transform-origin:right bottom;
+
+
+}
+
+.coeur:hover{
+
+     width: 30px;
+     background: red;
+
+/* transform
+
+translate(X,Y) 
+translateY()
+translateX
+
+*/
+
+/*transform: translate(50px);*/
+
+/*rotate*/
+
+/*transform: rotate(45deg) translate(100px);*/
+
+/*skew
+
+skew(X,Y)
+skew()
+skewY()
+skewX()
+*/
+/*transform: skew(10deg, 50deg);*/
+
+/*scale
+
+scale(X,Y)
+scaleY()
+scaleX()
+*/
+
+transform: scale(.70);
+
+}
+
+.fond{
+     width: 400px;
+     height: 600px;
+     background-color: yellow;
+
+}
+

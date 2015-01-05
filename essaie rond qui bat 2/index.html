@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>UN TITRE</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="_styles/normalize.css"/>
+		<link rel="stylesheet" href="_styles/styles.css"/>
+		
+	</head>
+	<body>
+
+
+		
+		<div class="fond"></div>
+
+		<container>
+
+			<button class="opener"></button>
+
+		</container>
+
+
+
+
+		<nav class="section section__nav">
+
+			<button class="closer"></button>
+
+		</nav>
+
+
+
+	
+
+		<script>
+		var btnOpener = document.getElementsByClassName("opener"),
+			btnCloser = document. getElementsByClassName("closer"),
+			nav = document.getElementsByClassName("section__nav");
+
+			for (var i=0; i<btnOpener.length; i++){
+
+			btnOpener[i].addEventListener("click", function(){
+
+				nav[0].classList.add("nav--open");
+
+			});
+
+
+
+
+			}
+
+			for (var i=0; i<btnCloser.length; i++){
+
+		
+
+			btnCloser[i].addEventListener("click", function(){
+				nav[0].classList.remove("nav--open");
+			});
+
+
+
+			}
+		</script>
+		
+		
+	</body>
+</html>
